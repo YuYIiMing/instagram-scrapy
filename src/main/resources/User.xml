@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="test">
+
+    <!--插入用户信息-->
+    <insert id="insertUser" parameterType="com.service.User">
+        insert into user(uid,username,business_email,fullName,biography,headPortrait,headPortraitHD,externalUrl,categoryLabels,followNum,fansNum)
+         values(#{uid},#{username},#{business_email},#{fullName},#{biography},#{headPortrait},#{headPortraitHD},#{externalUrl},#{categoryLabels},#{followNum},#{fansNum})
+    </insert>
+
+    <!--插入用户动态-->
+    <insert id="insertUserDynamic" parameterType="com.service.UserDynamic">
+        insert into userdynamic(uid,thumbnail_src,display_url,comment_count,creat_timestamp,like_count,isVideo,title,video_url,video_duration,video_view_count)
+        values(#{uid},#{thumbnail_src},#{display_url},#{comment_count},#{creat_timestamp},#{like_count},#{isVideo},#{title},#{video_url},#{video_duration},#{video_view_count})
+    </insert>
+
+
+</mapper>
